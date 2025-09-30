@@ -6,6 +6,10 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.87"
 
+[lib]
+# cdylib is required for Android, lib is required for desktop
+crate-type = ["cdylib", "lib"]
+
 [dependencies]
 egui = "0.32"
 eframe = { version = "0.32", default-features = false, features = [
@@ -18,6 +22,7 @@ eframe = { version = "0.32", default-features = false, features = [
     "x11",           # To support older Linux distributions (restores one of the default features)
 ] }
 log = "0.4.27"
+
 
 # You only need serde if you want app persistence:
 serde = { version = "1.0.219", features = ["derive"] }
@@ -33,12 +38,17 @@ eframe = { version = "0.32", default-features = false, features = [
     "glow",
     "android-native-activity",
 ] }
+egui_demo_lib = "0.32.3"
+log = "0.4.28"
+winit = "0.30.12"
+android_logger = "0.14"
+
 [package.metadata.android]
 build_targets = ["armv7-linux-androideabi", "aarch64-linux-android"]
 
 [package.metadata.android.sdk]
 min_sdk_version = 23
-target_sdk_version = 35
+target_sdk_version = 34
 
 
 # web:
@@ -57,7 +67,7 @@ opt-level = 3
 workspace = true
 
 [workspace.lints.rust]
-unsafe_code = "deny"
+unsafe_code = "allow"
 
 elided_lifetimes_in_paths = "warn"
 future_incompatible = { level = "warn", priority = -1 }
