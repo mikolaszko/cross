@@ -11,6 +11,7 @@ rust-version = "1.87"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
+egui_demo_lib = "0.32.3"
 egui = "0.32"
 eframe = { version = "0.32", default-features = false, features = [
     # probably not needed:
@@ -38,7 +39,6 @@ eframe = { version = "0.32", default-features = false, features = [
     "glow",
     "android-native-activity",
 ] }
-egui_demo_lib = "0.32.3"
 log = "0.4.28"
 winit = "0.30.12"
 android_logger = "0.14"
@@ -47,8 +47,8 @@ android_logger = "0.14"
 build_targets = ["armv7-linux-androideabi", "aarch64-linux-android"]
 
 [package.metadata.android.sdk]
-min_sdk_version = 23
-target_sdk_version = 34
+min_sdk_version = 29
+target_sdk_version = 30
 
 
 # web:

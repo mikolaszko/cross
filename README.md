@@ -16,3 +16,5 @@ trunk serve
 ```
 
 ### Android (WIP)
+
+ -show-kernel
