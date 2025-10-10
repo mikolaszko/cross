@@ -6,7 +6,17 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.87"
 
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
+
+[[bin]]
+name = "cross-bin"
+path = "src/main.rs"
+
+
 [lib]
+name="cross"
 # cdylib is required for Android, lib is required for desktop
 crate-type = ["cdylib", "lib"]
 
@@ -45,10 +55,12 @@ android_logger = "0.14"
 
 [package.metadata.android]
 build_targets = ["armv7-linux-androideabi", "aarch64-linux-android"]
+apk_name = "myapp"
 
 [package.metadata.android.sdk]
 min_sdk_version = 29
 target_sdk_version = 30
+
 
 
 # web:
