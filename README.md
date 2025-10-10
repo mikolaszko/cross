@@ -2,10 +2,11 @@
 Cross platform build for Linux, Mac, Windows, Web, Android and iOS
 
 ### Why?
-R&D project for future contract, performance benchmarking
+R&D project for future contract, performance benchmarking  
+Maybe I will make a template out of it?  
 
 ## Building & Testing  
-Automation and Build done with [Taskfile](https://taskfile.dev/)
+Automation and Build done with [Taskfile](https://taskfile.dev/)  
 Treating it as an opportunity to build a pipeline where each change to the codebase that breaks any platform can be spotted
 ## Manual build commands (probably gonna delete it and keep it in the configuration)
 ### Native
@@ -13,7 +14,7 @@ Treating it as an opportunity to build a pipeline where each change to the codeb
 cargo build & cargo run
 ```
 
-### Web (fill assets)
+### Web
 Run in browser with trunk:  
 ```
 trunk serve 
@@ -31,7 +32,6 @@ and the ```cargo apk run -p cross --lib``` command
 avdmanager list # this will output the availables avds
 
 ./emulator -avd <avd> -netdelay none -netspeed full
-
 ```
 One-time setup:
 ```

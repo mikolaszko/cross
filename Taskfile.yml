@@ -1,0 +1,41 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  AVD: Pixel_7
+
+tasks:
+  build:
+    - task: native
+    - task: web
+    - task: and
+    - echo "Full build done"
+  native:
+    cmds:
+      - cargo build -p cross
+    silent: false
+  web:
+    cmds:
+      - trunk build
+    silent: false
+  and: #build android
+    cmds:
+      - cargo apk build -p cross --lib
+    silent: false 
+  wrun:
+    cmds: 
+      - trunk serve
+  nrun:
+    cmds: 
+      - cargo run -p cross
+  # run with tmux / any multiplexer with arun
+  emulator: 
+    cmds: 
+      - emulator -avd {{.AVD}} -netdelay none -netspeed full
+  # run with tmux / any multiplexer with emulator
+  arun:
+    cmds:
+      - cargo apk run -p cross --lib
+
+  
