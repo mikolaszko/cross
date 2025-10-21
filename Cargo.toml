@@ -21,7 +21,6 @@ name="cross"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-egui_demo_lib = "0.32.3"
 egui = "0.32"
 eframe = { version = "0.32", default-features = false, features = [
     # probably not needed:
