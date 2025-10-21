@@ -1,4 +1,4 @@
-//754/ We derive Deserialize/Serialize so we can persist app state on shutdown.
+/// We derive Deserialize/Serialize so we can persist app state on shutdown.
 #[derive(serde::Deserialize, serde::Serialize)]
 #[serde(default)] // if we add new fields, give them default values when deserializing old state
 pub struct Cross {
@@ -45,6 +45,11 @@ impl eframe::App for Cross {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         // Put your widgets into a `SidePanel`, `TopBottomPanel`, `CentralPanel`, `Window` or `Area`.
         // For inspiration and more examples, go to https://emilk.github.io/egui
+        //
+        #[cfg(target_os = "android")]
+        egui::TopBottomPanel::top("status_bar_space").show(ctx, |ui| {
+            ui.set_height(32.0);
+        });
 
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             // The top panel is often a good place for a menu bar:
