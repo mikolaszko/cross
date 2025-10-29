@@ -1,14 +1,14 @@
-### Cross 
+# Cross 
 Cross platform build for Linux, Mac, Windows, Web, Android and iOS
 
-### Why?
+## Why?
 R&D project for future contract, performance benchmarking  
 Maybe I will make a template out of it?  
 
 ## Building & Testing  
 Automation and Build done with [Taskfile](https://taskfile.dev/)  
 Treating it as an opportunity to build a pipeline where each change to the codebase that breaks any platform can be spotted
-## Manual build commands (probably gonna delete it and keep it in the configuration)
+
 ### Native
 ```
 cargo build & cargo run
