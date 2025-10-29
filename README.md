@@ -1,9 +1,10 @@
 # 🦀 Cross 🦀
-Cross platform build for Linux, Mac, Windows, Web, Android and iOS
+Cross platform template for GUI development on Linux, Mac, Windows, Web, Android using egui  
 
-## Why?
-R&D project for future contract, performance benchmarking  
-Maybe I will make a template out of it?  
+## Purpose
+There was no project/example of how to make a working build and run egui app on the platforms mentioned above (examples exist but separately)  
+Eframe (official egui template) exists but the examples fall short and they don't provide a good way of handling Android and wasm together  
+This is a ready solution, just clone the project, change the AVD in the Taskfile and you are good to go  
 
 ## Building & Testing  
 Automation and Build done with [Taskfile](https://taskfile.dev/)  
