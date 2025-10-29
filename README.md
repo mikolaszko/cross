@@ -1,4 +1,4 @@
-# Cross 
+# 🦀 Cross 🦀
 Cross platform build for Linux, Mac, Windows, Web, Android and iOS
 
 ## Why?
